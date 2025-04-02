@@ -46,13 +46,13 @@ shape = SubResource("CapsuleShape3D_sfrck")
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.448564, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0)
 mesh = SubResource("BoxMesh_sfrck")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_0ba56")
 
