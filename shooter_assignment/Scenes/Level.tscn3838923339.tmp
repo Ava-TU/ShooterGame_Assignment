@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c0nxs5pr1f0nm"]
 
-[ext_resource type="Script" uid="uid://8daxxtrnymyh" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
+[ext_resource type="Script" uid="uid://8daxxtrnymyh" path="res://Scenes/character_body_3d.gd" id="1_0ba56"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0ba56"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -36,8 +36,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0377793, 2.98818, 1.63524)
-axis_lock_linear_z = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55557, 0)
 script = ExtResource("1_0ba56")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
