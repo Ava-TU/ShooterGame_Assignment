@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4euft6u77gs7"]
+
+[ext_resource type="Script" uid="uid://d15r2h407ojnx" path="res://Scripts/modules.gd" id="1_kyi68"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aqys"]
+albedo_color = Color(0.494118, 0.792157, 0.470588, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0aqys"]
+material = SubResource("StandardMaterial3D_0aqys")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0aqys"]
+
+[node name="Canvas4" type="Node3D"]
+script = ExtResource("1_kyi68")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_0aqys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_0aqys")

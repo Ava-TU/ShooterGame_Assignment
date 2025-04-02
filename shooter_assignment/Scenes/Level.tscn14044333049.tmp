@@ -35,7 +35,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000967026, 0.0482588, -0.0245705)
 
 [node name="LevelStuff" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26448, -11.2742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26448, -14.3299)
 script = ExtResource("1_vsvp5")
 modules = Array[PackedScene]([ExtResource("2_tj5wv"), ExtResource("3_ienac"), ExtResource("4_5rrr5"), ExtResource("5_or7tv")])
 
@@ -55,7 +55,7 @@ script = ExtResource("1_0ba56")
 shape = SubResource("CapsuleShape3D_sfrck")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, 0.433544, 0.648535)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, 0.416894, 0.648535)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
