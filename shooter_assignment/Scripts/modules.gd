@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var level = $"../"
-var speed = 5
+var speed = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

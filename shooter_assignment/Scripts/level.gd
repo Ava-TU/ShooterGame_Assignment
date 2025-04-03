@@ -1,9 +1,9 @@
 extends Node3D
 
 @export var modules: Array[PackedScene] = []
-var amount = 10
+var amount = 25
 var rng = RandomNumberGenerator.new()
-var offset = 5
+var offset = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
