@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0nxs5pr1f0nm"]
+[gd_scene load_steps=17 format=3 uid="uid://c0nxs5pr1f0nm"]
 
 [ext_resource type="Script" uid="uid://8daxxtrnymyh" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
 [ext_resource type="Script" uid="uid://dsir5hxykiykw" path="res://Scripts/level.gd" id="1_vsvp5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0u8o58y6hb3a" path="res://Modules/canvas2.tscn" id="3_ienac"]
 [ext_resource type="PackedScene" uid="uid://dpjgjcup7kugf" path="res://Modules/canvas3.tscn" id="4_5rrr5"]
 [ext_resource type="PackedScene" uid="uid://c4euft6u77gs7" path="res://Modules/canvas4.tscn" id="5_or7tv"]
+[ext_resource type="Texture2D" uid="uid://cqh5lgvo7m1dm" path="res://Textures/PinkCheckerdGroundTexture.jpg" id="7_ienac"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0ba56"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -22,14 +23,19 @@ glow_enabled = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfrck"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sfrck"]
-albedo_color = Color(1, 0.788544, 0.992864, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rrr5"]
+albedo_texture = ExtResource("7_ienac")
+uv1_scale = Vector3(17, 17, 17)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sfrck"]
-material = SubResource("StandardMaterial3D_sfrck")
+material = SubResource("StandardMaterial3D_5rrr5")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0ba56"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ienac"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5rrr5"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000967026, 0.0482588, -0.0245705)
@@ -60,29 +66,33 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, 0.433544, 0.
 [node name="Ground" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 27.4555, 0, 0, 0)
 mesh = SubResource("BoxMesh_sfrck")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 27.4555, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_0ba56")
 
 [node name="Left_Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1.18819, 0, 0, 0, 10.8456, 0, 0, 0, 8, -9.45217, 4.99135, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left_Wall"]
-mesh = SubResource("BoxMesh_sfrck")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.40629, 0, 0, 0)
+mesh = SubResource("BoxMesh_ienac")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Left_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.40629, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_0ba56")
 
 [node name="Right_Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1.18819, 0, 0, 0, 10.8456, 0, 0, 0, 8, 9.43696, 4.99135, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right_Wall"]
-mesh = SubResource("BoxMesh_sfrck")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.39184, 0, 0, 0)
+mesh = SubResource("BoxMesh_5rrr5")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Right_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.39184, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_0ba56")
