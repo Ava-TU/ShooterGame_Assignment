@@ -115,3 +115,15 @@ mesh = SubResource("PlaneMesh_5rrr5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 3.55271e-15, 0, 0.6988, -0.180376, 0, 0.00432253)
 shape = SubResource("BoxShape3D_5rrr5")
+
+[node name="GameManager" type="Node3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 31.0
+offset_top = 22.0
+offset_right = 218.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 35
+text = "Health: "
