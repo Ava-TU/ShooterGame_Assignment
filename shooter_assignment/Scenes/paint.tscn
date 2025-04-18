@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://pvdyy3ysoywb"]
+
+[ext_resource type="Texture2D" uid="uid://cup1nymyvkhxi" path="res://Textures/RainbowTexture.jpg" id="1_bsnim"]
+[ext_resource type="Script" uid="uid://dvihfkx7lgqac" path="res://Scenes/paint.gd" id="1_eoih1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eoih1"]
+radius = 0.718796
+
+[node name="Paint" type="CharacterBody3D"]
+script = ExtResource("1_eoih1")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+texture = ExtResource("1_bsnim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_eoih1")
