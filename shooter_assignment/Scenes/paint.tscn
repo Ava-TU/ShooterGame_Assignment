@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://dvihfkx7lgqac" path="res://Scenes/paint.gd" id="1_eoih1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_eoih1"]
-radius = 0.718796
+radius = 0.373143
 
 [node name="Paint" type="CharacterBody3D"]
 script = ExtResource("1_eoih1")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 texture = ExtResource("1_bsnim")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

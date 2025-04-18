@@ -5,8 +5,20 @@ const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
 var health = 3
 
+var paintBullet = load("res://Scenes/paint.tscn")
+var instance
+@onready var pos = $paintSpawn
 
 func _physics_process(delta: float) -> void:
+	
+	
+	##SHOOTING
+	if Input.is_action_just_pressed("shoot"):
+		instance = paintBullet.instantiate()
+		instance.position = pos.global_position
+		instance.transform.basis = pos.global_transform.basis
+		get_parent().add_child(instance)
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
