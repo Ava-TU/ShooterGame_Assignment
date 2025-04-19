@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1hqernw13xk1"]
+[gd_scene load_steps=7 format=3 uid="uid://1hqernw13xk1"]
 
 [ext_resource type="Script" uid="uid://d15r2h407ojnx" path="res://Scripts/modules.gd" id="1_5clhy"]
+[ext_resource type="Script" uid="uid://cby7y58ad7x3s" path="res://Modules/hit_box.gd" id="2_wqu58"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jv0a"]
 albedo_color = Color(1, 1, 0.380392, 1)
@@ -9,6 +10,8 @@ albedo_color = Color(1, 1, 0.380392, 1)
 material = SubResource("StandardMaterial3D_5jv0a")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5jv0a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5clhy"]
 
 [node name="Canvas1" type="Node3D"]
 script = ExtResource("1_5clhy")
@@ -21,3 +24,11 @@ mesh = SubResource("BoxMesh_nwbwr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_5jv0a")
+
+[node name="HitBox" type="Area3D" parent="StaticBody3D"]
+script = ExtResource("2_wqu58")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/HitBox"]
+shape = SubResource("BoxShape3D_5clhy")
+
+[connection signal="area_entered" from="StaticBody3D/HitBox" to="." method="_on_hit_box_area_entered"]

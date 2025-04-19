@@ -9,3 +9,8 @@ func _process(delta: float) -> void:
 	if position.z > 25:
 		level.SpawnModule(position.z + (level.amount * level.offset))
 		queue_free()
+
+
+func _on_hit_box_area_entered(area: Area3D) -> void:
+	print ("Paint")
+	queue_free()
