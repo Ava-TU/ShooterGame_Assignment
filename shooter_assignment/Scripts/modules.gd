@@ -14,3 +14,18 @@ func _process(delta: float) -> void:
 func _on_hit_box_area_entered(area: Area3D) -> void:
 	print ("Paint")
 	queue_free()
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	print ("Paint")
+	queue_free()
+
+
+func _on_hit_box_3_area_entered(area: Area3D) -> void:
+	print ("Paint")
+	queue_free()
+
+
+func _on_hit_box_4_area_entered(area: Area3D) -> void:
+	print ("Paint")
+	queue_free()
