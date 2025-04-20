@@ -45,3 +45,6 @@ func _on_player_hit_box_area_entered(area: Area3D) -> void:
 	print ("OUCH")
 	health -= 1
 	print (health)
+	
+	if health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
