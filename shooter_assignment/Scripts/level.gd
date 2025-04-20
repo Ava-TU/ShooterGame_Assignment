@@ -11,10 +11,6 @@ func _ready() -> void:
 		SpawnModule(n * offset)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func SpawnModule(n):
 	rng.randomize()
 	var num = rng.randi_range(0, modules.size()-1)

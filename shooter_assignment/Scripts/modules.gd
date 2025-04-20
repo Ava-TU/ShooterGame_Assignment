@@ -11,21 +11,21 @@ func _process(delta: float) -> void:
 		queue_free()
 
 
-func _on_hit_box_area_entered(area: Area3D) -> void:
-	print ("Paint")
+func _on_hit_box_area_entered(_area: Area3D) -> void:
+	print ("Paint 1")
 	queue_free()
 
 
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	print ("Paint")
+func _on_area_3d_area_entered(_area: Area3D) -> void:
+	print ("Paint 2")
 	queue_free()
 
 
-func _on_hit_box_3_area_entered(area: Area3D) -> void:
-	print ("Paint")
+func _on_hit_box_3_area_entered(_area: Area3D) -> void:
+	print ("Paint 3")
 	queue_free()
 
 
-func _on_hit_box_4_area_entered(area: Area3D) -> void:
-	print ("Paint")
+func _on_hit_box_4_area_entered(_area: Area3D) -> void:
+	print ("Paint 4")
 	queue_free()

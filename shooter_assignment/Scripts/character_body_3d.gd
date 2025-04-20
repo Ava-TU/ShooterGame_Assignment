@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_player_hit_box_area_entered(area: Area3D) -> void:
+func _on_player_hit_box_area_entered(_area: Area3D) -> void:
 	print ("OUCH")
 	health -= 1
 	print (health)

@@ -10,6 +10,6 @@ func _process(delta):
 		queue_free()
 
 
-func _on_body_entered(body: Node3D ) -> void:
+func _on_body_entered(_body: Node3D ) -> void:
 	print ("HIT")
 	queue_free()
