@@ -39,3 +39,9 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_player_hit_box_area_entered(area: Area3D) -> void:
+	print ("OUCH")
+	health -= 1
+	print (health)
