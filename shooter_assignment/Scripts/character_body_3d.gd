@@ -11,6 +11,7 @@ var instance
 
 func _physics_process(delta: float) -> void:
 	
+	$"../CanvasLayer/Label".text = "Health: " + str(health)
 	
 	##SHOOTING
 	if Input.is_action_just_pressed("shoot"):
