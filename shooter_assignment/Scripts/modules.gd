@@ -1,7 +1,6 @@
 extends Node3D
 
 @onready var level = $"../"
-@onready var score = $"../"
 
 var speed = 3
 
@@ -15,20 +14,27 @@ func _process(delta: float) -> void:
 
 func _on_hit_box_area_entered(_area: Area3D) -> void:
 	print ("Paint 1")
-	score.score += 100
-	print(score.score)
+	level.score += 100
+	print(level.score)
+	queue_free()
 
 
 func _on_area_3d_area_entered(_area: Area3D) -> void:
 	print ("Paint 2")
+	level.score += 100
+	print(level.score)
 	queue_free()
 
 
 func _on_hit_box_3_area_entered(_area: Area3D) -> void:
 	print ("Paint 3")
+	level.score += 100
+	print(level.score)
 	queue_free()
 
 
 func _on_hit_box_4_area_entered(_area: Area3D) -> void:
 	print ("Paint 4")
+	level.score += 100
+	print(level.score)
 	queue_free()
