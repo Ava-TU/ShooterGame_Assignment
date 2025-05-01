@@ -1,7 +1,7 @@
 extends Area3D
 
 var speed = 2
-
+@export var score:int = 0
 
 func _process(delta):
 	position += transform.basis * Vector3(0, 0, -speed) * delta
@@ -13,3 +13,7 @@ func _process(delta):
 func _on_body_entered(_body: Node3D ) -> void:
 	print ("HIT")
 	queue_free()
+	
+	if _body.is_in_group("Canvas"):
+		score += 100
+		print (score)

@@ -12,7 +12,7 @@ material = SubResource("StandardMaterial3D_jywch")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lovp1"]
 
-[node name="Canvas2" type="Node3D"]
+[node name="Canvas2" type="Node3D" groups=["Canvas"]]
 script = ExtResource("1_lovp1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
