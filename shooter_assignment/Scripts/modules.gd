@@ -1,6 +1,8 @@
 extends Node3D
 
 @onready var level = $"../"
+@onready var score = $"../"
+
 var speed = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,7 +15,8 @@ func _process(delta: float) -> void:
 
 func _on_hit_box_area_entered(_area: Area3D) -> void:
 	print ("Paint 1")
-	queue_free()
+	score.score += 100
+	print(score.score)
 
 
 func _on_area_3d_area_entered(_area: Area3D) -> void:
