@@ -6,7 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_eoih1"]
 radius = 0.373143
 
-[node name="Paint" type="Area3D"]
+[node name="Paint" type="Area3D" groups=["Projectiles"]]
 script = ExtResource("1_eoih1")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

@@ -14,9 +14,10 @@ func _process(delta: float) -> void:
 
 func _on_hit_box_area_entered(_area: Area3D) -> void:
 	print ("Paint 1")
-	queue_free()
 	score += 100
 	print (score)
+	if _area.is_in_group("Projectiles"):
+		queue_free()
 
 
 func _on_area_3d_area_entered(_area: Area3D) -> void:
