@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://c0nxs5pr1f0nm"]
+[gd_scene load_steps=26 format=3 uid="uid://c0nxs5pr1f0nm"]
 
 [ext_resource type="Script" uid="uid://8daxxtrnymyh" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
+[ext_resource type="Script" uid="uid://bsywtbe5myvn0" path="res://Scripts/Global.gd" id="1_133si"]
 [ext_resource type="Script" uid="uid://dsir5hxykiykw" path="res://Scripts/level.gd" id="1_vsvp5"]
 [ext_resource type="PackedScene" uid="uid://1hqernw13xk1" path="res://Modules/canvas1.tscn" id="2_tj5wv"]
 [ext_resource type="PackedScene" uid="uid://b0u8o58y6hb3a" path="res://Modules/canvas2.tscn" id="3_ienac"]
@@ -59,6 +60,7 @@ albedo_texture = ExtResource("8_5rrr5")
 material = SubResource("StandardMaterial3D_or7tv")
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_133si")
 
 [node name="LevelStuff" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26448, -11.2742)
@@ -143,8 +145,5 @@ offset_right = 134.0
 offset_bottom = 121.0
 theme_override_font_sizes/font_size = 35
 text = "Score:"
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
 
 [connection signal="area_entered" from="CharacterBody3D/Player Hit Box" to="CharacterBody3D" method="_on_player_hit_box_area_entered"]

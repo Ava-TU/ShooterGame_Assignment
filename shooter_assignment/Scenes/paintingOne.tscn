@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg2jvvu1xhewn"]
+
+[ext_resource type="Texture2D" uid="uid://d38y0wh02yy7a" path="res://Sprites/CatPainting.png" id="1_casel"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hlsd3"]
+size = Vector2(2, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s52b1"]
+albedo_texture = ExtResource("1_casel")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_casel"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_mask = 2
+gravity_scale = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("QuadMesh_hlsd3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_s52b1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_casel")
