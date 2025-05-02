@@ -6,11 +6,17 @@ var speed = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	position.z += speed * delta
-	if position.z > 10:
+	if position.z > 15:
 		level.SpawnModule(position.z + (level.amount * level.offset))
+		print("Canvas Delete")
+		Global.health -= 1
+		print(Global.health)
 		queue_free()
-
+		
+		if Global.health <= 0:
+			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 func _on_hit_box_area_entered(_area: Area3D) -> void:
 	print ("Paint 1")

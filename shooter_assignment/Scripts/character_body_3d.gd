@@ -1,9 +1,8 @@
 extends CharacterBody3D
 
-
 const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
-var health = 3
+
 
 var paintBullet = load("res://Scenes/paint.tscn")
 var instance
@@ -11,7 +10,7 @@ var instance
 
 func _physics_process(delta: float) -> void:
 	
-	$"../CanvasLayer/Label".text = "Health: " + str(health)
+	$"../CanvasLayer/Label".text = "Health: " + str(Global.health)
 	
 	##SHOOTING
 	if Input.is_action_just_pressed("shoot"):
@@ -44,8 +43,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_player_hit_box_area_entered(_area: Area3D) -> void:
 	print ("OUCH")
-	health -= 1
-	print (health)
+	Global.health -= 1
+	print (Global.health)
 	
-	if health <= 0:
+	if Global.health <= 0:
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
