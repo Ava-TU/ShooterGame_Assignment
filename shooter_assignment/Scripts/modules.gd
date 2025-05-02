@@ -36,8 +36,6 @@ func _on_hit_box_area_entered(_area: Area3D) -> void:
 	get_tree().root.add_child(hit_Change)
 	print("OMG")
 	queue_free()
-	#await get_tree().create_timer(2.0).timeout
-	#print("YAY")
 	
 
 
