@@ -29,4 +29,8 @@ shape = SubResource("BoxShape3D_0aqys")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/HitBox4"]
 shape = SubResource("BoxShape3D_kyi68")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="StaticBody3D/HitBox4" to="." method="_on_hit_box_4_area_entered"]

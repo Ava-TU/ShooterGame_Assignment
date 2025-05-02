@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://druyojofl5kfq"]
+
+[ext_resource type="Texture2D" uid="uid://d38y0wh02yy7a" path="res://Sprites/CatPainting.png" id="1_xxgdv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shep5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxgdv"]
+albedo_texture = ExtResource("1_xxgdv")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_shep5"]
+material = SubResource("StandardMaterial3D_xxgdv")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+visible = false
+shape = SubResource("BoxShape3D_shep5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1.5, 0, 1, -6.55671e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_shep5")

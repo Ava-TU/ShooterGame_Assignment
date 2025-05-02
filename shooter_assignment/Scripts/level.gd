@@ -2,7 +2,6 @@ extends Node3D
 
 @export var modules: Array[PackedScene] = []
 
-
 @export var amount:int = 25
 var rng = RandomNumberGenerator.new()
 var offset = 8
