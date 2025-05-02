@@ -2,6 +2,8 @@ extends Node3D
 
 @onready var level = $"../"
 @onready var paintingOne = preload("res://Scenes/paintingOne.tscn")
+@onready var paintTwo = preload("res://Scenes/painting_two.tscn")
+@onready var paintThree = preload("res://Scenes/painting_three.tscn")
 
 var speed = 3
 var rng = RandomNumberGenerator.new()
@@ -47,6 +49,12 @@ func _on_area_3d_area_entered(_area: Area3D) -> void:
 		queue_free()
 	else:
 		queue_free()
+		
+	var hit_ChangeTwo = paintTwo.instantiate()
+	hit_ChangeTwo.position = Vector3(global_position.x - 2.5, global_position.y, global_position.z)
+	get_tree().root.add_child(hit_ChangeTwo)
+	print("OMG")
+	queue_free()
 
 
 func _on_hit_box_3_area_entered(_area: Area3D) -> void:
@@ -57,6 +65,12 @@ func _on_hit_box_3_area_entered(_area: Area3D) -> void:
 		queue_free()
 	else:
 		queue_free()
+		
+	var hit_ChangeThree = paintThree.instantiate()
+	hit_ChangeThree.position = Vector3(global_position.x + 2.5, global_position.y, global_position.z)
+	get_tree().root.add_child(hit_ChangeThree)
+	print("OMG")
+	queue_free()
 
 
 func _on_hit_box_4_area_entered(_area: Area3D) -> void:

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqusni82r1pnv"]
+
+[ext_resource type="Script" uid="uid://by1cenepfwf17" path="res://Scripts/painting_one.gd" id="1_l4n4y"]
+[ext_resource type="Texture2D" uid="uid://b4sdjtivist5l" path="res://Sprites/FlowerPainting.png" id="2_l4n4y"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_b50lb"]
+size = Vector2(2, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3u35x"]
+albedo_texture = ExtResource("2_l4n4y")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hua2l"]
+
+[node name="PaintingTwo" type="Node3D"]
+
+[node name="Flower" type="RigidBody3D" parent="."]
+collision_mask = 2
+gravity_scale = 0.2
+script = ExtResource("1_l4n4y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Flower"]
+mesh = SubResource("QuadMesh_b50lb")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3u35x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Flower"]
+shape = SubResource("BoxShape3D_hua2l")
