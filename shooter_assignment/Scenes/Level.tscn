@@ -136,4 +136,12 @@ offset_bottom = 91.0
 theme_override_font_sizes/font_size = 35
 text = "Health: "
 
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 31.0
+offset_top = 72.0
+offset_right = 134.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 35
+text = "Score:"
+
 [connection signal="area_entered" from="CharacterBody3D/Player Hit Box" to="CharacterBody3D" method="_on_player_hit_box_area_entered"]
