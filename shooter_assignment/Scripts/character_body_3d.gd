@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 	
 	$"../CanvasLayer/Label".text = "Health: " + str(Global.health)
 	$"../CanvasLayer/ScoreLabel".text = "Score: " + str(Global.score)
+	$"../CanvasLayer/LevelLabel".text = "Level " + str(Global.currentLevel)
 	
 	##SHOOTING
 	if Input.is_action_just_pressed("shoot"):

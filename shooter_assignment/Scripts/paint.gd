@@ -1,6 +1,6 @@
 extends Area3D
 
-var speed = 2
+var speed = 5
 
 func _process(delta):
 	position += transform.basis * Vector3(0, 0, -speed) * delta

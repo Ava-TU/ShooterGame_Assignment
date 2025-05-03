@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://d15r2h407ojnx" path="res://Scripts/modules.gd" id="1_lovp1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jywch"]
-albedo_color = Color(1, 0.466667, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lovp1"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_lovp1"]
-material = SubResource("StandardMaterial3D_jywch")
+[sub_resource type="QuadMesh" id="QuadMesh_lovp1"]
+material = SubResource("StandardMaterial3D_lovp1")
+size = Vector2(2, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jywch"]
 
@@ -19,7 +19,7 @@ script = ExtResource("1_lovp1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_lovp1")
+mesh = SubResource("QuadMesh_lovp1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_jywch")

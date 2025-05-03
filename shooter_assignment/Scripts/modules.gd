@@ -6,12 +6,11 @@ extends Node3D
 @onready var paintThree = preload("res://Scenes/painting_three.tscn")
 @onready var paintFour = preload("res://Scenes/painting_four.tscn")
 
-var speed = 3
 var rng = RandomNumberGenerator.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.z += speed * delta
+	position.z += Global.canvasSpeed * delta
 	if position.z > 15:
 		level.SpawnModule(position.z + (level.amount * level.offset))
 		print("Canvas Delete")
@@ -21,6 +20,8 @@ func _process(delta: float) -> void:
 		
 		if Global.health <= 0:
 			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	
+	
 
 
 
@@ -88,7 +89,3 @@ func _on_hit_box_4_area_entered(_area: Area3D) -> void:
 	get_tree().root.add_child(hit_ChangeFour)
 	print("OMG")
 	queue_free()
-
-
-func _on_timer_timeout() -> void:
-	print ("Timer Stop")
