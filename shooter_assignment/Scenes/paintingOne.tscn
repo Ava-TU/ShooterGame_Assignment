@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg2jvvu1xhewn"]
+[gd_scene load_steps=9 format=3 uid="uid://bg2jvvu1xhewn"]
 
 [ext_resource type="Texture2D" uid="uid://d38y0wh02yy7a" path="res://Sprites/CatPainting.png" id="1_casel"]
 [ext_resource type="Script" uid="uid://by1cenepfwf17" path="res://Scripts/painting_one.gd" id="1_hlsd3"]
@@ -11,11 +11,21 @@ albedo_texture = ExtResource("1_casel")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_casel"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlsd3"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_s52b1"]
+material = SubResource("StandardMaterial3D_hlsd3")
+
+[sub_resource type="Curve" id="Curve_hlsd3"]
+_data = [Vector2(0.0284091, 0.258427), 0.0, 0.0, 0, 0, Vector2(0.522727, 0.359551), 0.0, 0.0, 0, 0, Vector2(1, 0.011236), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="PaintingOne" type="Node3D"]
 
 [node name="Cat" type="RigidBody3D" parent="."]
 collision_mask = 2
-gravity_scale = 0.2
+gravity_scale = 0.4
 script = ExtResource("1_hlsd3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cat"]
@@ -25,3 +35,24 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s52b1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cat"]
 shape = SubResource("BoxShape3D_casel")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Cat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0229831, 0.656578, -0.204756)
+amount = 20
+lifetime = 0.02
+speed_scale = 0.02
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+mesh = SubResource("QuadMesh_s52b1")
+direction = Vector3(0, 1, 0)
+spread = 48.0
+gravity = Vector3(0, 60, 2)
+initial_velocity_min = 65.0
+initial_velocity_max = 125.6
+angular_velocity_min = 61.82
+angular_velocity_max = 323.63
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_hlsd3")
+color = Color(1, 1, 0, 1)

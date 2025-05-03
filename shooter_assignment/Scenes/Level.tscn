@@ -63,9 +63,10 @@ material = SubResource("StandardMaterial3D_or7tv")
 script = ExtResource("1_133si")
 
 [node name="LevelStuff" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26448, -11.2742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26448, -13.8366)
 script = ExtResource("1_vsvp5")
 modules = Array[PackedScene]([ExtResource("2_tj5wv"), ExtResource("3_ienac"), ExtResource("4_5rrr5"), ExtResource("5_or7tv"), ExtResource("6_or7tv")])
+amount = 15
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8rbpu")
