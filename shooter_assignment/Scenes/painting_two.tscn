@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqusni82r1pnv"]
+[gd_scene load_steps=8 format=3 uid="uid://bqusni82r1pnv"]
 
 [ext_resource type="Script" uid="uid://by1cenepfwf17" path="res://Scripts/painting_one.gd" id="1_l4n4y"]
 [ext_resource type="Texture2D" uid="uid://b4sdjtivist5l" path="res://Sprites/FlowerPainting.png" id="2_l4n4y"]
@@ -8,8 +8,6 @@ size = Vector2(2, 2.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3u35x"]
 albedo_texture = ExtResource("2_l4n4y")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hua2l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlsd3"]
 vertex_color_use_as_albedo = true
@@ -32,9 +30,6 @@ script = ExtResource("1_l4n4y")
 mesh = SubResource("QuadMesh_b50lb")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_3u35x")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Flower"]
-shape = SubResource("BoxShape3D_hua2l")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Flower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0229831, 0.656578, -0.204756)

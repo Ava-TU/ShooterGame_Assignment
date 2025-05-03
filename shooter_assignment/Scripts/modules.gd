@@ -6,7 +6,6 @@ extends Node3D
 @onready var paintThree = preload("res://Scenes/painting_three.tscn")
 @onready var paintFour = preload("res://Scenes/painting_four.tscn")
 
-var rng = RandomNumberGenerator.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,6 +31,7 @@ func _on_hit_box_area_entered(_area: Area3D) -> void:
 		Global.score += 100
 		print(Global.score)
 		queue_free()
+		level.SpawnModule(position.z + (level.amount * level.offset))
 	else:
 		queue_free()
 	
@@ -49,6 +49,7 @@ func _on_area_3d_area_entered(_area: Area3D) -> void:
 		Global.score += 100
 		print(Global.score)
 		queue_free()
+		level.SpawnModule(position.z + (level.amount * level.offset))
 	else:
 		queue_free()
 		
@@ -65,6 +66,7 @@ func _on_hit_box_3_area_entered(_area: Area3D) -> void:
 		Global.score += 100
 		print(Global.score)
 		queue_free()
+		level.SpawnModule(position.z + (level.amount * level.offset))
 	else:
 		queue_free()
 		
@@ -81,6 +83,7 @@ func _on_hit_box_4_area_entered(_area: Area3D) -> void:
 		Global.score += 100
 		print(Global.score)
 		queue_free()
+		level.SpawnModule(position.z + (level.amount * level.offset))
 	else:
 		queue_free()
 		

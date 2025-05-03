@@ -1,3 +1,39 @@
-[gd_scene format=3 uid="uid://bnmrft32mxego"]
+[gd_scene load_steps=2 format=3 uid="uid://bnmrft32mxego"]
+
+[ext_resource type="Script" uid="uid://cn18o6lihb01" path="res://Scenes/start_screen.gd" id="1_c1in8"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_c1in8")
+
+[node name="Play" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 114.0
+offset_right = 99.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Start Game"
+
+[node name="Exit" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 194.0
+offset_right = 89.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Exit Game"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

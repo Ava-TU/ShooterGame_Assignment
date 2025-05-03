@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b0u8o58y6hb3a" path="res://Modules/canvas2.tscn" id="3_ienac"]
 [ext_resource type="PackedScene" uid="uid://dpjgjcup7kugf" path="res://Modules/canvas3.tscn" id="4_5rrr5"]
 [ext_resource type="PackedScene" uid="uid://c4euft6u77gs7" path="res://Modules/canvas4.tscn" id="5_or7tv"]
-[ext_resource type="PackedScene" uid="uid://bei3v6qresfmm" path="res://Modules/noCanvas.tscn" id="6_or7tv"]
 [ext_resource type="Texture2D" uid="uid://cqh5lgvo7m1dm" path="res://Textures/PinkCheckerdGroundTexture.jpg" id="7_ienac"]
 [ext_resource type="Texture2D" uid="uid://cup1nymyvkhxi" path="res://Textures/RainbowTexture.jpg" id="8_5rrr5"]
+[ext_resource type="AudioStream" uid="uid://rmyqq8qtj6l1" path="res://Sounds/PaintSplat.wav" id="10_133si"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0ba56"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -101,8 +101,7 @@ text = "Level 1"
 [node name="LevelStuff" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26448, -13.8366)
 script = ExtResource("1_vsvp5")
-modules = Array[PackedScene]([ExtResource("2_tj5wv"), ExtResource("3_ienac"), ExtResource("4_5rrr5"), ExtResource("5_or7tv"), ExtResource("6_or7tv")])
-amount = 15
+modules = Array[PackedScene]([ExtResource("2_tj5wv"), ExtResource("3_ienac"), ExtResource("4_5rrr5"), ExtResource("5_or7tv")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8rbpu")
@@ -132,6 +131,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.301002, -1.74782)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Player Hit Box"]
 shape = SubResource("BoxShape3D_or7tv")
+
+[node name="PaintSplatAudio" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, -1.22724, -1.33775)
+stream = ExtResource("10_133si")
+volume_db = -9.0
+bus = &"Sound FX"
 
 [node name="Ground" type="StaticBody3D" parent="."]
 

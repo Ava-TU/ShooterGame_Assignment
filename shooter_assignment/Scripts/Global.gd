@@ -6,10 +6,10 @@ var currentLevel = 1
 var nextTarget = 500
 var canvasSpeed = 3
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if score == nextTarget:
 		currentLevel += 1
 		nextTarget += 500
-		canvasSpeed += 10
+		canvasSpeed += 1
 		print (nextTarget)

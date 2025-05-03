@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var paintOneEmit = $CPUParticles3D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	paintOneEmit.emitting = true
 	
 	if position.y < -5:
