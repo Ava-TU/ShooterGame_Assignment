@@ -1,9 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://c0nxs5pr1f0nm"]
+[gd_scene load_steps=35 format=3 uid="uid://c0nxs5pr1f0nm"]
 
 [ext_resource type="Script" uid="uid://8daxxtrnymyh" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
 [ext_resource type="Script" uid="uid://bsywtbe5myvn0" path="res://Scripts/Global.gd" id="1_133si"]
 [ext_resource type="Script" uid="uid://dsir5hxykiykw" path="res://Scripts/level.gd" id="1_vsvp5"]
+[ext_resource type="Texture2D" uid="uid://23sevxntbggi" path="res://Sprites/PaintbrushFrameOne.png" id="2_b10nm"]
 [ext_resource type="PackedScene" uid="uid://1hqernw13xk1" path="res://Modules/canvas1.tscn" id="2_tj5wv"]
+[ext_resource type="Script" uid="uid://ck40pt3ragnx6" path="res://Scenes/paintbrush_anim.gd" id="3_fhlu0"]
 [ext_resource type="PackedScene" uid="uid://b0u8o58y6hb3a" path="res://Modules/canvas2.tscn" id="3_ienac"]
 [ext_resource type="PackedScene" uid="uid://dpjgjcup7kugf" path="res://Modules/canvas3.tscn" id="4_5rrr5"]
 [ext_resource type="PackedScene" uid="uid://c4euft6u77gs7" path="res://Modules/canvas4.tscn" id="5_or7tv"]
@@ -11,6 +13,72 @@
 [ext_resource type="Texture2D" uid="uid://cup1nymyvkhxi" path="res://Textures/RainbowTexture.jpg" id="8_5rrr5"]
 [ext_resource type="AudioStream" uid="uid://3yp78dvtl3db" path="res://Sounds/Mozart's The Magic Flute (Overture), K. 620 - WOLFGANG AMADEUS MOZART #music #classical.mp3" id="9_esopp"]
 [ext_resource type="AudioStream" uid="uid://rmyqq8qtj6l1" path="res://Sounds/PaintSplat.wav" id="10_133si"]
+
+[sub_resource type="Animation" id="Animation_fhlu0"]
+resource_name = "PaintbrushIdle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PaintbrushOne:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(949, 567), Vector2(949, 544), Vector2(949, 567)]
+}
+
+[sub_resource type="Animation" id="Animation_b10nm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PaintbrushOne:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(949, 567)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PaintbrushOne:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nrlyp"]
+resource_name = "PaintbrushClick"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PaintbrushOne:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.865329, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bktio"]
+_data = {
+&"PaintbrushClick": SubResource("Animation_nrlyp"),
+&"PaintbrushIdle": SubResource("Animation_fhlu0"),
+&"RESET": SubResource("Animation_b10nm")
+}
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0ba56"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -98,6 +166,18 @@ offset_bottom = 63.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 35
 text = "Level 1"
+
+[node name="PaintbrushOne" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(949, 567)
+scale = Vector2(0.229209, 0.229209)
+texture = ExtResource("2_b10nm")
+
+[node name="PaintbrushAnim" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_bktio")
+}
+speed_scale = 0.5
+script = ExtResource("3_fhlu0")
 
 [node name="LevelStuff" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26448, -13.8366)

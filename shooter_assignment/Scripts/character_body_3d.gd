@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 var paintBullet = load("res://Scenes/paint.tscn")
 var instance
 @onready var pos = $paintSpawn
+@onready var anim = $"../CanvasLayer/PaintbrushAnim"
 
 func _physics_process(delta: float) -> void:
 	
@@ -21,6 +22,7 @@ func _physics_process(delta: float) -> void:
 		instance.transform.basis = pos.global_transform.basis
 		get_parent().add_child(instance)
 		$PaintSplatAudio.playing = true
+		
 	
 	# Add the gravity.
 	if not is_on_floor():
