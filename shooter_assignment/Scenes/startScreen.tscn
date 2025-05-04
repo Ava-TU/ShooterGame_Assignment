@@ -1,33 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnmrft32mxego"]
+[gd_scene load_steps=4 format=3 uid="uid://bnmrft32mxego"]
 
 [ext_resource type="Script" uid="uid://cn18o6lihb01" path="res://Scripts/start_screen.gd" id="1_c1in8"]
 [ext_resource type="FontFile" uid="uid://rjsgd4gx6n3s" path="res://Super Funky.ttf" id="2_nwqh5"]
-[ext_resource type="Texture2D" uid="uid://dmij6e7xnh3bt" path="res://Sprites/HeartPainting.png" id="2_r2tfp"]
-[ext_resource type="Texture2D" uid="uid://23sevxntbggi" path="res://Sprites/PaintbrushFrameOne.png" id="4_r2tfp"]
-
-[sub_resource type="Gradient" id="Gradient_rjluv"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1)
-colors = PackedColorArray(0.616377, 0.201841, 0.233869, 1, 0.527024, 0.276547, 0.0622488, 1, 0.640196, 0.525911, 0.0908902, 1, 0.205979, 0.513424, 0.174233, 1, 0.0550859, 0.434714, 0.57228, 1, 0.267112, 0.196155, 0.693563, 1, 0.417417, 0.0548699, 0.476987, 1)
-metadata/_snap_enabled = true
-metadata/_snap_count = 6
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_nwqh5"]
-gradient = SubResource("Gradient_rjluv")
+[ext_resource type="Texture2D" uid="uid://cqh5lgvo7m1dm" path="res://Textures/PinkCheckerdGroundTexture.jpg" id="2_ti5xi"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_c1in8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.125718, 0.144665, 0.258022, 1)
 offset_right = 64.0
 offset_bottom = 64.0
-scale = Vector2(19.9937, 11.2019)
-texture = SubResource("GradientTexture2D_nwqh5")
-
-[node name="HeartPainting" type="Sprite2D" parent="."]
-position = Vector2(229, 359)
-scale = Vector2(0.249268, 0.249268)
-texture = ExtResource("2_r2tfp")
+scale = Vector2(2.50586, 1.41004)
+texture = ExtResource("2_ti5xi")
+stretch_mode = 3
 
 [node name="Play" type="Button" parent="."]
 anchors_preset = 8
@@ -73,7 +59,7 @@ offset_right = 215.0
 offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.453847, 0.598986, 1, 1)
+theme_override_colors/font_color = Color(0.332967, 0.567823, 0.91862, 1)
 theme_override_colors/font_shadow_color = Color(0.160638, 1.05888e-06, 0.783792, 1)
 theme_override_fonts/font = ExtResource("2_nwqh5")
 theme_override_font_sizes/font_size = 80
@@ -81,11 +67,6 @@ text = "Speed
 Painting"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="PaintbrushFrameOne" type="Sprite2D" parent="."]
-position = Vector2(1052, 358)
-scale = Vector2(0.219295, 0.219295)
-texture = ExtResource("4_r2tfp")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
