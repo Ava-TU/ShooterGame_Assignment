@@ -4,7 +4,10 @@ extends Node3D
 
 func _process(_delta: float) -> void:
 	paintOneEmit.emitting = true
-	
+
+	if Global.spawned == true:
+		$"../Yay".playing = true
+		Global.spawned = false
 	if position.y < -5:
 		queue_free()
 		print("DeletedCanvas")

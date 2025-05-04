@@ -40,7 +40,7 @@ func _on_hit_box_area_entered(_area: Area3D) -> void:
 	get_tree().root.add_child(hit_Change)
 	print("OMG")
 	queue_free()
-	
+	Global.spawned = true
 
 
 func _on_area_3d_area_entered(_area: Area3D) -> void:
@@ -58,6 +58,7 @@ func _on_area_3d_area_entered(_area: Area3D) -> void:
 	get_tree().root.add_child(hit_ChangeTwo)
 	print("OMG")
 	queue_free()
+	Global.spawned = true
 
 
 func _on_hit_box_3_area_entered(_area: Area3D) -> void:
@@ -75,6 +76,7 @@ func _on_hit_box_3_area_entered(_area: Area3D) -> void:
 	get_tree().root.add_child(hit_ChangeThree)
 	print("OMG")
 	queue_free()
+	Global.spawned = true
 
 
 func _on_hit_box_4_area_entered(_area: Area3D) -> void:
@@ -92,3 +94,4 @@ func _on_hit_box_4_area_entered(_area: Area3D) -> void:
 	get_tree().root.add_child(hit_ChangeFour)
 	print("OMG")
 	queue_free()
+	Global.spawned = true
