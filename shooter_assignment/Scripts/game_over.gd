@@ -3,6 +3,8 @@ extends CanvasLayer
 func _ready() -> void:
 	if Global.score == 0:
 		$Boo.playing = true
+	else:
+		$Applause.playing = true
 	
 	$FinishedPaintings.text = "Paintings Completed: " + str(Global.score / 50)
 	$FinalScore.text = "Final Score: " + str(Global.score)
