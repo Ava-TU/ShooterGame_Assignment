@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c0nxs5pr1f0nm"]
+[gd_scene load_steps=36 format=3 uid="uid://c0nxs5pr1f0nm"]
 
 [ext_resource type="Script" uid="uid://8daxxtrnymyh" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
 [ext_resource type="Script" uid="uid://bsywtbe5myvn0" path="res://Scripts/Global.gd" id="1_133si"]
@@ -81,18 +81,7 @@ _data = {
 &"RESET": SubResource("Animation_b10nm")
 }
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0ba56"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_vsvp5"]
-sky_material = SubResource("ProceduralSkyMaterial_0ba56")
-
-[sub_resource type="Environment" id="Environment_8rbpu"]
-background_mode = 2
-sky = SubResource("Sky_vsvp5")
-tonemap_mode = 2
-glow_enabled = true
+[sub_resource type="Environment" id="Environment_bktio"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfrck"]
 
@@ -192,7 +181,7 @@ script = ExtResource("1_vsvp5")
 modules = Array[PackedScene]([ExtResource("2_tj5wv"), ExtResource("3_ienac"), ExtResource("4_5rrr5"), ExtResource("5_or7tv")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_8rbpu")
+environment = SubResource("Environment_bktio")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
