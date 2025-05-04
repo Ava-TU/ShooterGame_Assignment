@@ -1,22 +1,24 @@
-[gd_scene load_steps=14 format=3 uid="uid://wjsydbkfy6fj"]
+[gd_scene load_steps=15 format=3 uid="uid://wjsydbkfy6fj"]
 
 [ext_resource type="Script" uid="uid://cew6aip3d6p7u" path="res://Scripts/game_over.gd" id="1_ojehl"]
 [ext_resource type="AudioStream" uid="uid://bq3big4c131gb" path="res://Sounds/BooSound.wav" id="2_8fo1c"]
 [ext_resource type="AudioStream" uid="uid://8sey4g4cn2l2" path="res://Sounds/Applause.wav" id="3_ek8ke"]
 [ext_resource type="Texture2D" uid="uid://d38y0wh02yy7a" path="res://Sprites/CatPainting.png" id="4_14u15"]
+[ext_resource type="FontFile" uid="uid://rjsgd4gx6n3s" path="res://Super Funky.ttf" id="4_uylih"]
 [ext_resource type="Texture2D" uid="uid://b4sdjtivist5l" path="res://Sprites/FlowerPainting.png" id="5_j3ryr"]
 [ext_resource type="Texture2D" uid="uid://cl4hbp475d1yk" path="res://Sprites/ParkPainting.png" id="5_rjluv"]
 [ext_resource type="Texture2D" uid="uid://jnlji6ickl2b" path="res://Sprites/FriendshipPainting.png" id="6_j3ryr"]
 [ext_resource type="Script" uid="uid://dbyltyme2je32" path="res://Scripts/EndScreenAnims.gd" id="8_gjtdd"]
 
-[sub_resource type="Gradient" id="Gradient_rjluv"]
+[sub_resource type="Gradient" id="Gradient_uylih"]
+interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1)
 colors = PackedColorArray(0.281141, 0.0703035, 0.087447, 1, 0.30891, 0.15223, 0.0212992, 1, 0.461962, 0.37731, 0.0570998, 1, 0.147086, 0.379685, 0.123014, 1, 0.0214381, 0.269401, 0.360489, 1, 0.150486, 0.100747, 0.427847, 1, 0.253883, 0.0196704, 0.29292, 1)
 metadata/_snap_enabled = true
 metadata/_snap_count = 6
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gjtdd"]
-gradient = SubResource("Gradient_rjluv")
+gradient = SubResource("Gradient_uylih")
 
 [sub_resource type="Animation" id="Animation_rjluv"]
 resource_name = "Paintings dance"
@@ -148,6 +150,7 @@ offset_right = 121.0
 offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_uylih")
 theme_override_font_sizes/font_size = 35
 text = "Play Again"
 
@@ -163,6 +166,7 @@ offset_right = 97.0
 offset_bottom = 221.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_uylih")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
 
@@ -183,6 +187,8 @@ offset_top = 95.0
 offset_right = 180.0
 offset_bottom = 144.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.81025, 0.72968, 0.663591, 1)
+theme_override_fonts/font = ExtResource("4_uylih")
 theme_override_font_sizes/font_size = 35
 text = "Paintings Completed:"
 
@@ -195,6 +201,8 @@ offset_top = 164.0
 offset_right = 180.0
 offset_bottom = 213.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.792295, 0.65113, 0.824024, 1)
+theme_override_fonts/font = ExtResource("4_uylih")
 theme_override_font_sizes/font_size = 35
 text = "Final Score:"
 horizontal_alignment = 1
