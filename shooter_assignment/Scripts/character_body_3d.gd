@@ -50,6 +50,7 @@ func _on_player_hit_box_area_entered(_area: Area3D) -> void:
 	print ("OUCH")
 	Global.health -= 1
 	print (Global.health)
+	$OWAudio.playing = true
 	
 	if Global.health <= 0:
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")

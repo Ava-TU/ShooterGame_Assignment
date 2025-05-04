@@ -12,7 +12,7 @@ size = Vector2(2, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qfjj6"]
 
-[node name="Canvas3" type="Node3D"]
+[node name="Canvas3" type="Node3D" groups=["Canvas"]]
 script = ExtResource("1_qfjj6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
