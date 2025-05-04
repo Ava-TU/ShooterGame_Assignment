@@ -13,8 +13,8 @@ config_version=5
 config/name="Speed Painting"
 run/main_scene="res://Scenes/startScreen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-boot_splash/image="uid://d38y0wh02yy7a"
-config/icon="uid://d38y0wh02yy7a"
+boot_splash/image="res://Sprites/CatPainting.png"
+config/icon="res://Sprites/CatPainting.png"
 
 [autoload]
 
