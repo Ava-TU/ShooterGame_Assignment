@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqh5lgvo7m1dm"
 path.s3tc="res://.godot/imported/PinkCheckerdGroundTexture.jpg-e0a8e370332eea6fee10892a4a65bb18.s3tc.ctex"
+path.etc2="res://.godot/imported/PinkCheckerdGroundTexture.jpg-e0a8e370332eea6fee10892a4a65bb18.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/PinkCheckerdGroundTexture.jpg"
-dest_files=["res://.godot/imported/PinkCheckerdGroundTexture.jpg-e0a8e370332eea6fee10892a4a65bb18.s3tc.ctex"]
+dest_files=["res://.godot/imported/PinkCheckerdGroundTexture.jpg-e0a8e370332eea6fee10892a4a65bb18.s3tc.ctex", "res://.godot/imported/PinkCheckerdGroundTexture.jpg-e0a8e370332eea6fee10892a4a65bb18.etc2.ctex"]
 
 [params]
 

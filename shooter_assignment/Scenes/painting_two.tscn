@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqusni82r1pnv"]
+[gd_scene load_steps=9 format=3 uid="uid://bqusni82r1pnv"]
 
 [ext_resource type="Script" uid="uid://by1cenepfwf17" path="res://Scripts/painting_one.gd" id="1_l4n4y"]
 [ext_resource type="Texture2D" uid="uid://b4sdjtivist5l" path="res://Sprites/FlowerPainting.png" id="2_l4n4y"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4n4y"]
+albedo_texture = ExtResource("2_l4n4y")
+
 [sub_resource type="QuadMesh" id="QuadMesh_b50lb"]
+material = SubResource("StandardMaterial3D_l4n4y")
 size = Vector2(2, 2.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3u35x"]
