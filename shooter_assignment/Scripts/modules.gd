@@ -28,7 +28,7 @@ func _on_hit_box_area_entered(_area: Area3D) -> void:
 	print ("Paint 1")
 	
 	if _area.is_in_group("Projectiles"):
-		Global.score += 100
+		Global.score += 50
 		print(Global.score)
 		queue_free()
 		level.SpawnModule(position.z + (level.amount * level.offset))
@@ -46,7 +46,7 @@ func _on_hit_box_area_entered(_area: Area3D) -> void:
 func _on_area_3d_area_entered(_area: Area3D) -> void:
 	print ("Paint 2")
 	if _area.is_in_group("Projectiles"):
-		Global.score += 100
+		Global.score += 50
 		print(Global.score)
 		queue_free()
 		level.SpawnModule(position.z + (level.amount * level.offset))
@@ -63,7 +63,7 @@ func _on_area_3d_area_entered(_area: Area3D) -> void:
 func _on_hit_box_3_area_entered(_area: Area3D) -> void:
 	print ("Paint 3")
 	if _area.is_in_group("Projectiles"):
-		Global.score += 100
+		Global.score += 50
 		print(Global.score)
 		queue_free()
 		level.SpawnModule(position.z + (level.amount * level.offset))
@@ -80,7 +80,7 @@ func _on_hit_box_3_area_entered(_area: Area3D) -> void:
 func _on_hit_box_4_area_entered(_area: Area3D) -> void:
 	print ("Paint 4")
 	if _area.is_in_group("Projectiles"):
-		Global.score += 100
+		Global.score += 50
 		print(Global.score)
 		queue_free()
 		level.SpawnModule(position.z + (level.amount * level.offset))
