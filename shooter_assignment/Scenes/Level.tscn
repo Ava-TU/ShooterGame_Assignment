@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c0nxs5pr1f0nm"]
+[gd_scene load_steps=29 format=3 uid="uid://c0nxs5pr1f0nm"]
 
 [ext_resource type="Script" uid="uid://8daxxtrnymyh" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
 [ext_resource type="Script" uid="uid://bsywtbe5myvn0" path="res://Scripts/Global.gd" id="1_133si"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c4euft6u77gs7" path="res://Modules/canvas4.tscn" id="5_or7tv"]
 [ext_resource type="Texture2D" uid="uid://cqh5lgvo7m1dm" path="res://Textures/PinkCheckerdGroundTexture.jpg" id="7_ienac"]
 [ext_resource type="Texture2D" uid="uid://cup1nymyvkhxi" path="res://Textures/RainbowTexture.jpg" id="8_5rrr5"]
+[ext_resource type="AudioStream" uid="uid://3yp78dvtl3db" path="res://Sounds/Mozart's The Magic Flute (Overture), K. 620 - WOLFGANG AMADEUS MOZART #music #classical.mp3" id="9_esopp"]
 [ext_resource type="AudioStream" uid="uid://rmyqq8qtj6l1" path="res://Sounds/PaintSplat.wav" id="10_133si"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0ba56"]
@@ -137,6 +138,11 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, -1.22724, -1
 stream = ExtResource("10_133si")
 volume_db = -9.0
 bus = &"Sound FX"
+
+[node name="MusicAudio" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, -1.22724, -1.33775)
+stream = ExtResource("9_esopp")
+bus = &"Music"
 
 [node name="Ground" type="StaticBody3D" parent="."]
 

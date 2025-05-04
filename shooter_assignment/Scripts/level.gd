@@ -8,6 +8,7 @@ var offset = 12
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"../CharacterBody3D/MusicAudio".playing = true
 	for n in amount:
 		SpawnModule(n * offset)
 
