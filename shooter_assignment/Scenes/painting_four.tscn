@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx3hie6d3d3yw"]
+[gd_scene load_steps=8 format=3 uid="uid://bx3hie6d3d3yw"]
 
 [ext_resource type="Script" uid="uid://by1cenepfwf17" path="res://Scripts/painting_one.gd" id="1_uk4er"]
 [ext_resource type="Texture2D" uid="uid://jnlji6ickl2b" path="res://Sprites/FriendshipPainting.png" id="2_vt2jx"]
-[ext_resource type="AudioStream" uid="uid://qqhovk4eyqxb" path="res://Sounds/Yay.wav" id="3_vt2jx"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_wtfh2"]
 size = Vector2(2, 2.5)
@@ -52,8 +51,3 @@ scale_amount_min = 0.3
 scale_amount_max = 0.7
 scale_amount_curve = SubResource("Curve_wtfh2")
 color = Color(0.980392, 0.372549, 0.921569, 1)
-
-[node name="Yay" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_vt2jx")
-volume_db = -5.0
-bus = &"Voices"

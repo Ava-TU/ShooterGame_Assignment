@@ -5,7 +5,6 @@ var score = 0
 var currentLevel = 1
 var nextTarget = 250
 var canvasSpeed = 3.0
-var spawned = false
 
 func _process(_delta: float) -> void:
 	
