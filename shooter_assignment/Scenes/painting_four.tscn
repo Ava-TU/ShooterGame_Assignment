@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bx3hie6d3d3yw"]
 
-[ext_resource type="Script" uid="uid://by1cenepfwf17" path="res://Scripts/painting_one.gd" id="1_uk4er"]
+[ext_resource type="Script" path="res://Scripts/painting_one.gd" id="1_uk4er"]
 [ext_resource type="Texture2D" uid="uid://jnlji6ickl2b" path="res://Sprites/FriendshipPainting.png" id="2_vt2jx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vt2jx"]

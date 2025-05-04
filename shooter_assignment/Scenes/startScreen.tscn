@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnmrft32mxego"]
 
-[ext_resource type="Script" uid="uid://cn18o6lihb01" path="res://Scripts/start_screen.gd" id="1_c1in8"]
+[ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_c1in8"]
 [ext_resource type="FontFile" uid="uid://rjsgd4gx6n3s" path="res://Super Funky.ttf" id="2_nwqh5"]
 [ext_resource type="Texture2D" uid="uid://cqh5lgvo7m1dm" path="res://Textures/PinkCheckerdGroundTexture.jpg" id="2_ti5xi"]
 

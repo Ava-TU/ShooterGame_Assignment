@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Speed Painting"
-run/main_scene="uid://bnmrft32mxego"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="res://Scenes/startScreen.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="uid://d38y0wh02yy7a"
 config/icon="uid://d38y0wh02yy7a"
 
@@ -49,5 +49,6 @@ shoot={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
