@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsmur1ti5s6yg"]
+
+[ext_resource type="Material" uid="uid://njg4uef5hg2k" path="res://Sprites/blank.tres" id="1_m6c8s"]
+[ext_resource type="Texture2D" uid="uid://d38y0wh02yy7a" path="res://Sprites/CatPainting.png" id="2_dt3qw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dt3qw"]
+material = ExtResource("1_m6c8s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8u7g"]
+albedo_texture = ExtResource("2_dt3qw")
+
+[node name="Cube" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_dt3qw")
+surface_material_override/0 = SubResource("StandardMaterial3D_g8u7g")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://ciy6orjcu7rpa"]
+
+[ext_resource type="Script" path="res://Scripts/painting_one.gd" id="1_upy40"]
+[ext_resource type="Texture2D" uid="uid://cl4hbp475d1yk" path="res://Sprites/ParkPainting.png" id="2_upy40"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbx1y"]
+albedo_texture = ExtResource("2_upy40")
+
+[sub_resource type="QuadMesh" id="QuadMesh_is4ha"]
+material = SubResource("StandardMaterial3D_cbx1y")
+size = Vector2(2, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7qbi"]
+albedo_texture = ExtResource("2_upy40")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upy40"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_cbx1y"]
+material = SubResource("StandardMaterial3D_upy40")
+
+[sub_resource type="Curve" id="Curve_is4ha"]
+_data = [Vector2(0.0284091, 0.258427), 0.0, 0.0, 0, 0, Vector2(0.522727, 0.359551), 0.0, 0.0, 0, 0, Vector2(1, 0.011236), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="paintingThree" type="Node3D"]
+
+[node name="Flower" type="RigidBody3D" parent="."]
+collision_mask = 2
+gravity_scale = 0.4
+script = ExtResource("1_upy40")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Flower"]
+mesh = SubResource("QuadMesh_is4ha")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_k7qbi")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Flower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0229831, 0.656578, -0.204756)
+amount = 20
+lifetime = 0.02
+speed_scale = 0.02
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+mesh = SubResource("QuadMesh_cbx1y")
+direction = Vector3(0, 1, 0)
+spread = 48.0
+gravity = Vector3(0, 60, 2)
+initial_velocity_min = 65.0
+initial_velocity_max = 125.6
+angular_velocity_min = 61.82
+angular_velocity_max = 323.63
+scale_amount_min = 0.3
+scale_amount_max = 0.7
+scale_amount_curve = SubResource("Curve_is4ha")
+color = Color(0.27451, 0.796078, 0.921569, 1)

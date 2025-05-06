@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://pvdyy3ysoywb"]
+
+[ext_resource type="Script" path="res://Scripts/paint.gd" id="1_eoih1"]
+[ext_resource type="Texture2D" uid="uid://oj5sx4syul6o" path="res://Sprites/PaintSplatter.png" id="2_eoih1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eoih1"]
+radius = 0.373143
+
+[node name="Paint" type="Area3D" groups=["Projectiles"]]
+script = ExtResource("1_eoih1")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+texture = ExtResource("2_eoih1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_eoih1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

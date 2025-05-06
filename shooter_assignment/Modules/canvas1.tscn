@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://1hqernw13xk1"]
+
+[ext_resource type="Script" uid="uid://d15r2h407ojnx" path="res://Scripts/modules.gd" id="1_5clhy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5jv0a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5clhy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5clhy"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_5clhy"]
+material = SubResource("StandardMaterial3D_5clhy")
+size = Vector2(2, 2.5)
+
+[node name="Canvas1" type="Node3D" groups=["Canvas"]]
+script = ExtResource("1_5clhy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_5jv0a")
+
+[node name="HitBox" type="Area3D" parent="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/HitBox"]
+shape = SubResource("BoxShape3D_5clhy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/HitBox"]
+mesh = SubResource("QuadMesh_5clhy")
+skeleton = NodePath("../..")
+
+[connection signal="area_entered" from="StaticBody3D/HitBox" to="." method="_on_hit_box_area_entered"]

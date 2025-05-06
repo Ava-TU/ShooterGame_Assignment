@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnmrft32mxego"]
+
+[ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_c1in8"]
+[ext_resource type="FontFile" uid="uid://rjsgd4gx6n3s" path="res://Super Funky.ttf" id="2_nwqh5"]
+[ext_resource type="Texture2D" uid="uid://cqh5lgvo7m1dm" path="res://Textures/PinkCheckerdGroundTexture.jpg" id="2_ti5xi"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_c1in8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.125718, 0.144665, 0.258022, 1)
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(2.50586, 1.41004)
+texture = ExtResource("2_ti5xi")
+stretch_mode = 3
+
+[node name="Play" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 114.0
+offset_right = 99.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nwqh5")
+theme_override_font_sizes/font_size = 35
+text = "Start Game"
+
+[node name="Exit" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 194.0
+offset_right = 89.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nwqh5")
+theme_override_font_sizes/font_size = 35
+text = "Exit Game"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -208.0
+offset_right = 215.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.332967, 0.567823, 0.91862, 1)
+theme_override_colors/font_shadow_color = Color(0.160638, 1.05888e-06, 0.783792, 1)
+theme_override_fonts/font = ExtResource("2_nwqh5")
+theme_override_font_sizes/font_size = 80
+text = "Speed
+Painting"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

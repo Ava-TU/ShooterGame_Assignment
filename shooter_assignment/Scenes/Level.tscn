@@ -1,0 +1,284 @@
+[gd_scene load_steps=36 format=3 uid="uid://c0nxs5pr1f0nm"]
+
+[ext_resource type="Script" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
+[ext_resource type="Script" path="res://Scripts/Global.gd" id="1_133si"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_vsvp5"]
+[ext_resource type="Texture2D" uid="uid://23sevxntbggi" path="res://Sprites/PaintbrushFrameOne.png" id="2_b10nm"]
+[ext_resource type="PackedScene" uid="uid://1hqernw13xk1" path="res://Modules/canvas1.tscn" id="2_tj5wv"]
+[ext_resource type="Script" path="res://Scripts/paintbrush_anim.gd" id="3_fhlu0"]
+[ext_resource type="PackedScene" uid="uid://b0u8o58y6hb3a" path="res://Modules/canvas2.tscn" id="3_ienac"]
+[ext_resource type="PackedScene" uid="uid://dpjgjcup7kugf" path="res://Modules/canvas3.tscn" id="4_5rrr5"]
+[ext_resource type="PackedScene" uid="uid://c4euft6u77gs7" path="res://Modules/canvas4.tscn" id="5_or7tv"]
+[ext_resource type="Texture2D" uid="uid://cqh5lgvo7m1dm" path="res://Textures/PinkCheckerdGroundTexture.jpg" id="7_ienac"]
+[ext_resource type="Texture2D" uid="uid://cup1nymyvkhxi" path="res://Textures/RainbowTexture.jpg" id="8_5rrr5"]
+[ext_resource type="AudioStream" uid="uid://3yp78dvtl3db" path="res://Sounds/Mozart's The Magic Flute (Overture), K. 620 - WOLFGANG AMADEUS MOZART #music #classical.mp3" id="9_esopp"]
+[ext_resource type="AudioStream" uid="uid://rmyqq8qtj6l1" path="res://Sounds/PaintSplat.wav" id="10_133si"]
+[ext_resource type="AudioStream" uid="uid://pbjplvqg75sx" path="res://Sounds/OuchThree.wav" id="11_bktio"]
+
+[sub_resource type="Animation" id="Animation_nrlyp"]
+resource_name = "PaintbrushClick"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PaintbrushOne:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.865329, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fhlu0"]
+resource_name = "PaintbrushIdle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PaintbrushOne:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(949, 567), Vector2(949, 544), Vector2(949, 567)]
+}
+
+[sub_resource type="Animation" id="Animation_b10nm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PaintbrushOne:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(949, 567)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PaintbrushOne:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bktio"]
+_data = {
+"PaintbrushClick": SubResource("Animation_nrlyp"),
+"PaintbrushIdle": SubResource("Animation_fhlu0"),
+"RESET": SubResource("Animation_b10nm")
+}
+
+[sub_resource type="Environment" id="Environment_bktio"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfrck"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esopp"]
+albedo_color = Color(0.545098, 0.454902, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b10nm"]
+material = SubResource("StandardMaterial3D_esopp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_or7tv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rrr5"]
+albedo_texture = ExtResource("7_ienac")
+uv1_scale = Vector3(17, 17, 17)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sfrck"]
+material = SubResource("StandardMaterial3D_5rrr5")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0ba56"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhlu0"]
+albedo_color = Color(0.849875, 0.7977, 0.902961, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bktio"]
+material = SubResource("StandardMaterial3D_fhlu0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_133si"]
+albedo_texture = ExtResource("8_5rrr5")
+
+[sub_resource type="QuadMesh" id="QuadMesh_esopp"]
+material = SubResource("StandardMaterial3D_133si")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5rrr5"]
+size = Vector3(1, 1, 3.43372)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_or7tv"]
+albedo_texture = ExtResource("8_5rrr5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5rrr5"]
+material = SubResource("StandardMaterial3D_or7tv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b10nm"]
+albedo_color = Color(0.640034, 0.386428, 0.235442, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fhlu0"]
+material = SubResource("StandardMaterial3D_b10nm")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_133si")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 31.0
+offset_top = 22.0
+offset_right = 218.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 35
+text = "Health: "
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 31.0
+offset_top = 72.0
+offset_right = 134.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 35
+text = "Score:"
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 14.0
+offset_right = 59.0
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Level 1"
+
+[node name="PaintbrushOne" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(949, 567)
+scale = Vector2(0.229209, 0.229209)
+texture = ExtResource("2_b10nm")
+
+[node name="PaintbrushAnim" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_bktio")
+}
+speed_scale = 0.5
+script = ExtResource("3_fhlu0")
+
+[node name="LevelStuff" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26448, -13.8366)
+script = ExtResource("1_vsvp5")
+modules = Array[PackedScene]([ExtResource("2_tj5wv"), ExtResource("3_ienac"), ExtResource("4_5rrr5"), ExtResource("5_or7tv")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bktio")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0377793, 2.45448, 2.67551)
+axis_lock_linear_z = true
+script = ExtResource("1_0ba56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_sfrck")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, 0.433544, 0.0589349)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_b10nm")
+
+[node name="paintSpawn" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.301002, -1.74782)
+
+[node name="Player Hit Box" type="Area3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0685147)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Player Hit Box"]
+shape = SubResource("BoxShape3D_or7tv")
+
+[node name="PaintSplatAudio" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, -1.22724, -1.33775)
+stream = ExtResource("10_133si")
+volume_db = -11.0
+bus = &"Sound FX"
+
+[node name="MusicAudio" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0188897, -1.22724, -1.33775)
+stream = ExtResource("9_esopp")
+volume_db = -26.0
+bus = &"Music"
+
+[node name="OWAudio" type="AudioStreamPlayer" parent="CharacterBody3D"]
+stream = ExtResource("11_bktio")
+volume_db = -10.0
+bus = &"Voices"
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 27.4555, 0, 0, 0)
+mesh = SubResource("BoxMesh_sfrck")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 27.4555, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_0ba56")
+
+[node name="Ground2" type="StaticBody3D" parent="."]
+transform = Transform3D(1.37085, 0, 0, 0, 1, 0, 0, 0, 1, 0.0498147, 9.81264, -5.28305)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground2"]
+transform = Transform3D(10.3464, 0, 0, 0, -0.254462, 1.28446e-06, 0, -2.22458e-08, -14.6925, 0, 0, 0)
+mesh = SubResource("PlaneMesh_bktio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 27.4555, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_0ba56")
+
+[node name="Left_Wall" type="StaticBody3D" parent="."]
+transform = Transform3D(1.18819, 0, 0, 0, 6.8392, 0, 0, 0, 6.52355, -9.32067, 4.49497, -5.9702)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Left_Wall"]
+transform = Transform3D(1.04318e-07, 0, 0.653741, 0, 1.30747, 0, 2.38653, 0, -2.85759e-08, -0.453627, 0.0690585, 0.00823629)
+mesh = SubResource("QuadMesh_esopp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Left_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6988, -0.232113, 0, 0.00432253)
+shape = SubResource("BoxShape3D_5rrr5")
+
+[node name="RightWall" type="StaticBody3D" parent="."]
+transform = Transform3D(-1.18819, 0, -5.70307e-07, 0, 6.8392, 0, 1.03875e-07, 0, -6.52355, 9.34121, 4.45836, -5.9702)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RightWall"]
+transform = Transform3D(1.62374e-07, 1, -2.49115e-15, -5.41246e-08, 1.91069e-15, -0.651899, -1.23823, 1.31134e-07, 2.84954e-08, -0.453627, 0.0690585, 0.00823629)
+mesh = SubResource("PlaneMesh_5rrr5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 3.55271e-15, 0, 0.6988, -0.180376, 0, 0.00432253)
+shape = SubResource("BoxShape3D_5rrr5")
+
+[node name="FrontWall" type="StaticBody3D" parent="."]
+transform = Transform3D(-5.19374e-08, 0, -6.52355, 0, 6.8392, 0, 1.18819, 0, -2.85153e-07, 0.0379839, 4.45836, -13.1648)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="FrontWall"]
+transform = Transform3D(2.09862e-07, 1, -2.49115e-15, -6.9954e-08, 1.91069e-15, -0.651899, -1.60037, 1.31134e-07, 2.84954e-08, -0.34722, 0.0690585, 0.0088086)
+mesh = SubResource("PlaneMesh_fhlu0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrontWall"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 5.32907e-15, 0, 0.903173, -0.180376, 0, 0.00375021)
+shape = SubResource("BoxShape3D_5rrr5")
+
+[connection signal="area_entered" from="CharacterBody3D/Player Hit Box" to="CharacterBody3D" method="_on_player_hit_box_area_entered"]
