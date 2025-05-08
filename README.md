@@ -19,9 +19,9 @@ Paint = Left Mouse Button
 
 Jump (for fun!) = Spacebar
 # How It Works
-When you start the game, you're put into a room and blank canvas panels will start to procedurally spawn in and move towards you. There is a wall that is placed in front of you so you won't know where the paintings will be coming from until they enter the room.
+When you start the game, you're put into a room and blank canvas panels will start to procedurally spawn in using an array and move towards you. There is a wall that is placed in front of you so you won't know where the paintings will be coming from until they enter the room.
 
-You can "shoot" a splatter of paint from your paintbrush that will shoot forward and if it collides with a blank canvas, the mesh will change into a coloured painting which will shoot out a confetti particle and will slowly float down out of the room.
+You can "shoot" a splatter of paint from your paintbrush that will shoot forward and if it collides with a blank canvas, the mesh will change into a coloured painting which will shoot out a confetti particle effect and will slowly float down out of the room.
 
 Each painting you complete give you 50 points and for every 250 points you gain, the speed that the canvas panels moves increases to help keep it engaging and challenging.
 
