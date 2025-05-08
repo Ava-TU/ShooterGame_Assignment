@@ -22,6 +22,10 @@ Jump (for fun!) = Spacebar
 When you start the game, you're put into a room and blank canvas panels will start to procedurally spawn in and move towards you. There is a wall that is placed in front of you so you won't know where the paintings will be coming from until they enter the room.
 
 You can "shoot" a splatter of paint from your paintbrush that will shoot forward and if it collides with a blank canvas, the mesh will change into a coloured painting which will shoot out a confetti particle and will slowly float down out of the room.
+
+Each painting you complete give you 50 points and for every 250 points you gain, the speed that the canvas panels moves increases to help keep it engaging and challenging.
+
+If you miss a canvas or if you get hit by one, you lose one heart and once you reach zero health, the game will switch to the game over scene that displays how many painting you had completed and your final score count.
 # List of Classes/Assets in the Project
 # References
 # What I Am Most Proud of in the Assignment
