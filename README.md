@@ -27,6 +27,11 @@ Each painting you complete give you 50 points and for every 250 points you gain,
 
 If you miss a canvas or if you get hit by one, you lose one heart and once you reach zero health, the game will switch to the game over scene that displays how many painting you had completed and your final score count.
 # List of Classes/Assets in the Project
+| Class/Assets |  Source  |
+|:-----|:--------:|
+| L0   | **bold** |
+| L1   |  `code`  |
+| L2   | _italic_ |
 # References
 # What I Am Most Proud of in the Assignment
 # What I Have Learned
