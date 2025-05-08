@@ -6,7 +6,13 @@ Student Number: C24384981
 This is my 2D artistic shooter game for Games Programming MED9016: 2024-25
 # Video
 https://www.youtube.com/watch?v=rH2WzIFX7mc
+
 # Screenshots
+![Screenshot 2025-05-08 185949](https://github.com/user-attachments/assets/a03de126-511c-4ea4-91e6-bbc8ad527662) 
+![Screenshot 2025-05-08 190059](https://github.com/user-attachments/assets/68ba0b93-264d-4c6a-b38c-a41ee58b681e)
+![Screenshot 2025-05-08 190119](https://github.com/user-attachments/assets/5571cc81-0546-4ad5-9d6e-f1719aa223e2)
+![Screenshot 2025-05-08 190132](https://github.com/user-attachments/assets/7253250c-cafd-48cb-8fff-1d0361c418ee)
+
 # Description
 You play as an upcoming painter as you start off your day completing commissions for consumers.
 
