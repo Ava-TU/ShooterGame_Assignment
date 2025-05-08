@@ -29,10 +29,15 @@ If you miss a canvas or if you get hit by one, you lose one heart and once you r
 # List of Classes/Assets in the Project
 | Class/Assets |  Source  |
 |:-----|:--------:|
-| L0   | **bold** |
-| L1   |  `code`  |
-| L2   | _italic_ |
+| character_body_3d.gd   | Self-written, Shooting code from reference 1 |
+| game_over.gd   |  Self-written  |
+| Global.gd   | Modified from reference 2 |
+| level.gd  | From reference 3 |
+| modules.gd  | Modified from reference 
 # References
+1. https://youtu.be/6bbPHsB9TtI?si=cZwI8TbJSqEvehzA
+2. https://youtu.be/sc-tEPdLZhk?si=eTp-Su8KP8y53hnK
+3. https://youtu.be/oFK3fElaxbU?si=yTzWCANYgOPDQE4A
 # What I Am Most Proud of in the Assignment
 # What I Have Learned
 # Game Design Document
