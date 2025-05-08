@@ -54,5 +54,8 @@ If you miss a canvas or if you get hit by one, you lose one heart and once you r
 5. https://youtu.be/V9kshvtj6s0?si=Twuk86FnCBJIcTSY
 6. https://youtu.be/yWIH7hHfWyU?si=s5hYbJn4RR-EbAwi
 # What I Am Most Proud of in the Assignment
+After completing this assignment and being able to see the final product, I'm proud of what I was able to achieve with my little knowledge of making 3D games in Godot.
+
+What I am most proud of in this assignment would be my ability to solve the problems that I encountered throughout this project by breaking down the code myself and being able to find solutions without fully relying on Youtube videos or going onto forums on Google.
 # What I Have Learned
 # Game Design Document
