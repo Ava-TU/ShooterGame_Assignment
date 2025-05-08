@@ -20,7 +20,7 @@ The more paintings you complete, the faster the requests come in and the demand 
 
 Paint as fast as you can but be careful, if you miss too many requests, they will get mad...
 # Instructions for Use
-Move = WASD / Left + Right Arrow Keys
+Move = A/D or Left + Right Arrow Keys
 
 Paint = Left Mouse Button
 
