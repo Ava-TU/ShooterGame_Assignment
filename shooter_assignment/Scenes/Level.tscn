@@ -1,11 +1,11 @@
 [gd_scene load_steps=36 format=3 uid="uid://c0nxs5pr1f0nm"]
 
-[ext_resource type="Script" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
-[ext_resource type="Script" path="res://Scripts/Global.gd" id="1_133si"]
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_vsvp5"]
+[ext_resource type="Script" uid="uid://8daxxtrnymyh" path="res://Scripts/character_body_3d.gd" id="1_0ba56"]
+[ext_resource type="Script" uid="uid://bsywtbe5myvn0" path="res://Scripts/Global.gd" id="1_133si"]
+[ext_resource type="Script" uid="uid://dsir5hxykiykw" path="res://Scripts/level.gd" id="1_vsvp5"]
 [ext_resource type="Texture2D" uid="uid://23sevxntbggi" path="res://Sprites/PaintbrushFrameOne.png" id="2_b10nm"]
 [ext_resource type="PackedScene" uid="uid://1hqernw13xk1" path="res://Modules/canvas1.tscn" id="2_tj5wv"]
-[ext_resource type="Script" path="res://Scripts/paintbrush_anim.gd" id="3_fhlu0"]
+[ext_resource type="Script" uid="uid://ck40pt3ragnx6" path="res://Scripts/paintbrush_anim.gd" id="3_fhlu0"]
 [ext_resource type="PackedScene" uid="uid://b0u8o58y6hb3a" path="res://Modules/canvas2.tscn" id="3_ienac"]
 [ext_resource type="PackedScene" uid="uid://dpjgjcup7kugf" path="res://Modules/canvas3.tscn" id="4_5rrr5"]
 [ext_resource type="PackedScene" uid="uid://c4euft6u77gs7" path="res://Modules/canvas4.tscn" id="5_or7tv"]
@@ -76,9 +76,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bktio"]
 _data = {
-"PaintbrushClick": SubResource("Animation_nrlyp"),
-"PaintbrushIdle": SubResource("Animation_fhlu0"),
-"RESET": SubResource("Animation_b10nm")
+&"PaintbrushClick": SubResource("Animation_nrlyp"),
+&"PaintbrushIdle": SubResource("Animation_fhlu0"),
+&"RESET": SubResource("Animation_b10nm")
 }
 
 [sub_resource type="Environment" id="Environment_bktio"]
@@ -170,7 +170,7 @@ texture = ExtResource("2_b10nm")
 
 [node name="PaintbrushAnim" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
-"": SubResource("AnimationLibrary_bktio")
+&"": SubResource("AnimationLibrary_bktio")
 }
 speed_scale = 0.5
 script = ExtResource("3_fhlu0")
