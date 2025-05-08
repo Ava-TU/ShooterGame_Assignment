@@ -33,11 +33,13 @@ If you miss a canvas or if you get hit by one, you lose one heart and once you r
 | game_over.gd   |  Self-written  |
 | Global.gd   | Modified from reference 2 |
 | level.gd  | From reference 3 |
-| modules.gd  | Modified from reference 
+| modules.gd  | Modified from reference 3 and 4 |
+
 # References
 1. https://youtu.be/6bbPHsB9TtI?si=cZwI8TbJSqEvehzA
 2. https://youtu.be/sc-tEPdLZhk?si=eTp-Su8KP8y53hnK
 3. https://youtu.be/oFK3fElaxbU?si=yTzWCANYgOPDQE4A
+4. https://youtu.be/iEmiLN9twqA?si=BLpIwY98cgAou9v0
 # What I Am Most Proud of in the Assignment
 # What I Have Learned
 # Game Design Document
