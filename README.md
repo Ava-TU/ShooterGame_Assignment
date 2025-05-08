@@ -56,6 +56,9 @@ If you miss a canvas or if you get hit by one, you lose one heart and once you r
 # What I Am Most Proud of in the Assignment
 After completing this assignment and being able to see the final product, I'm proud of what I was able to achieve with my little knowledge of making 3D games in Godot.
 
-What I am most proud of in this assignment would be my ability to solve the problems that I encountered throughout this project by breaking down the code myself and being able to find solutions without fully relying on Youtube videos or going onto forums on Google.
+What I am most proud of in this assignment would be my ability to solve the problems that I encountered throughout this project by breaking down the code myself and being able to find solutions without fully relying on Youtube videos or going onto forums on Google. This defiently helped me learn many different components that I can use for future projects, like using Array lists and creating packed scenes to help save up space in the hierarchy.
 # What I Have Learned
+I have learned loads of new information and built upon my skills from doing this assignment.
+
+I was able to successfully created an array loop that procedurally spawns in blank canvas panels at random intervals. I was also successful at using a global script in order to keep track of the players health, score, the speed the canvas panels move at, what level the player is currently on, and having a target that increases every time the player reaches the target amount - the target at the start is set to 250 points and once the player gains that score, the target variable increases by another 250 while also increasing the speed by 1 and this continues until the player runs out of health.
 # Game Design Document
