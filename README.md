@@ -5,6 +5,7 @@ Student Number: C24384981
 
 This is my 2D artistic shooter game for Games Programming MED9016: 2024-25
 # Video
+https://www.youtube.com/watch?v=rH2WzIFX7mc
 # Screenshots
 # Description
 You play as an upcoming painter as you start off your day completing commissions for consumers.
